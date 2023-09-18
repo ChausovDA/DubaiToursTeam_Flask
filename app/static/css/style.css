@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=PT+Serif:ital@0;1&display=swap');
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    background: #9ACD32;
+    box-sizing: border-box;
+}
+/* HEADER */
+.navbar {
+    background: linear-gradient(#FF8C00, #FFD700);
+}
+
+.navbar-brand img {
+    height: 100px;
+    width: 280px;
+    padding: 0px;
+}
+
+.navbar .navbar-toggler {
+	background-color: #ffffff;
+}
+
+.navbar-nav li {
+    padding-right: 20px;
+}
+
+a.nav-link {
+    font-family: 'PT Serif', serif;
+    color: #000000;
+    font-size: 23px;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+}
+
+a.nav-link:hover {
+    cursor: default;
+    color: #ffffff;
+    background-size: 100% 2px;
+}
+
+.social-link {
+    list-style: none;
+}
+
+.social-link li {
+    display: inline;
+    padding: 20px;
+}
+
+.social-link img {
+    width: 40px;
+    height: 40px;
+}
+/* END HEADER */
+
+/* CONTENT */
+.container {
+    font-family: 'PT Serif', serif;
+    background: #fff5e3;
+    padding-top: 15px;
+    
+}
+
+.container h1 {
+    margin-bottom: 0;
+    height: 100vh;
+}
+
+.offer {
+    margin: 20px;
+    text-align: center;
+}
+
+.tour-card {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.card-img {
+    width: 260px;
+    height: 260px;
+}
+
+.card-img:hover {
+    opacity: 0.5;
+}
+
+.card-title {
+    font-family: 'PT Serif', serif;
+    padding-top: 20px;
+}
+
+.card-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* MODAL */
+.modal-header {
+    background: linear-gradient(#FF8C00, #FFD700);
+    font-family: 'PT Serif', serif;
+}
+
+.modal-body {
+    font-family: 'PT Serif', serif;
+    background: #fff5e3;
+    text-align: left;
+}
+/* END MODAL */
+
+.btn.btn-success {
+    background-color: #9ACD32;
+    border: none;
+    margin-top: 20px;
+}
+
+.btn.btn-success:hover {
+    background-color: #FF8C00;
+}
+
+.showall {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn.btn-lg {
+    background: linear-gradient(#FF8C00, #FFD700);
+    border: none;
+    color: #fffcfc;
+}
+
+.btn.btn-lg:hover {
+    background: #9ACD32;
+}
+/* END CONTENT */
+
+/* ABOUT */
+.container.about {
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.container.about h3 {
+    padding-top: 40px;
+}
+
+.container.about p {
+    padding-top: 15px;
+    text-align: left;
+}
+
+.about-card {
+    padding-top: 30px;
+}
+
+.about-img-top {
+    height: 100px;
+    width: 100px;
+}
+
+h4.card-title {
+    padding-top: 10px;
+}
+/* END ABOUT */
+
+/* CONTACTS */
+.container.contacts {
+    font-family: 'PT Serif', serif;
+    text-align: center;
+    display: inline;
+}
+
+.contact-list {
+    margin: 30px;
+}
+.contacts img {
+    width: 70px;
+    height: 70px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+/* END CONTACTS */
+
+/* FOOTER */
+div.footer {
+    background: linear-gradient(#FF8C00, #FFD700);
+}
+
+ul.footer-list {
+    font-family: 'PT Serif', serif;
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+ul.footer-link {
+    list-style: none;
+    float: right;
+}
+
+.footer-link li {
+    display: inline;
+    padding: 10px;
+}
+
+ul.footer-link img {
+    width: 35px;
+    height: 35px;
+}
+
+div.col-6.col-md-12.col-sm-12 {
+    padding-top: 20px;
+}
+/* END FOOTER */
+
+/* SCROLLBAR */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-track {
+    opacity: 0;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #FF8C00;
+    border-radius: 20px;
+}
+/* FOR FIREFOX */
+body {
+    scrollbar-width: thin;        
+    scrollbar-color: rgba(0, 0, 255, 0) #FF8C00;
+}
+/* END SCROLLBAR */
+
+/* MEDIA */
+@media (max-width: 375px) {
+    .navbar-brand img {
+        height: 90px;
+        width: 220px;
+    }
+    ul.contact-list {
+        margin-top: 30px;
+        float: none;
+    }
+    .social-link li {
+        display: inline;
+        padding: 8px;
+    }
+    .social-link {
+        margin-top: 50px;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) { 
+    img.card-img {
+        width: 220px;
+        height: 200px;
+        padding: 3px;
+    }
+    ul.footer-link {
+        list-style: none;
+        float: none;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    ul.footer-list {
+        text-align: center;
+    }
+    ul.contact-list {
+        margin-top: 30px;
+        float: none;
+    }
+}
+/* END MEDIA */
+
+/* ADMIN LOGIN */
+.field {
+    padding-top: 20px;
+}
+
+.form_label {
+    width: 120px;
+    font-size: 1.75rem;
+}
+
+.login_form {
+    padding: 30px 90px;
+    height: 100vh;
+}
+
+.change_label {
+    width: 270px;
+    font-size: 1.75rem;
+}
+
+.btn.btn-secondary {
+    margin-top: 50px;
+}
+
+@media (max-width: 375px) {
+    .form {
+        width: 100%;
+    };
+}
+/* END LOGIN */
+/* ADMIN */
+.admin_list {
+    list-style: none;
+    margin-bottom: 0px;
+}
+
+.admin_list li {
+    padding-top: 5px;
+}
