@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+    <div class="container content">
+
+        <div class="admin_func">
+            <a href="{{ url_for('logout') }}"><button class="btn btn-secondary">Выйти</button></a>
+            <a href="{{ url_for('change') }}"><button class="btn btn-secondary">Сменить пароль администратора</button></a>
+            <a href="{{ url_for('add_tour') }}"><button class="btn btn-secondary">Добавить экскурсию</button></a>
+        </div>
+
+        <h2>Удалить:</h2>
+
+        {% for t in tours %}
+            <ul class="admin_list">
+                <li><a href="{{ url_for('delete', tour_id=t.id ) }}">{{ t.id }}.{{ t.title }}</a></li>
+            </ul>
+        {% endfor %}
+    </div>
+
+    
+    
+    
+
+
+{% endblock %}

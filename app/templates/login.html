@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<div class="container content">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 form">
+        <form action="" method="post" class="login_form">
+            {{ form.hidden_tag() }}
+            <h2 class="login_title"><b>Вход</b></h2>
+            <div class="field">{{ form.login.label(class="form_label") }} {{ form.login() }}</div>
+            <div class="field">{{ form.psw.label(class="form_label") }} {{ form.psw() }}</div>
+            {{ form.submit(class="btn btn-secondary") }}
+        </form>
+    </div>
+</div>
+{% endblock %}

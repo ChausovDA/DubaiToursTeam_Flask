@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<div class="container content">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 form">
+        <form action="" method="post" class="login_form">
+            {{ form.hidden_tag() }}
+            <h2 class="login_title"><b>Добавить экскурсию</b></h2>
+            <div class="field">{{ form.title.label(class="change_label") }} {{ form.title() }}</div>
+            <div class="field">{{ form.description.label(class="change_label") }} {{ form.description() }}</div>
+            <div class="field">{{ form.img.label(class="change_label") }} {{ form.img() }}</div>
+            <div class="field">{{ form.index.label(class="change_label") }} {{ form.index() }}</div>
+            <div class="field">{{ form.category.label(class="change_label") }} {{ form.category() }}</div>
+            <div class="field">{{ form.bs_id.label(class="change_label") }} {{ form.bs_id() }}</div>
+            {{ form.submit(class="btn btn-secondary") }}
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+
+<div class="container content">
+    <div class="row">
+
+        <div class="offer">
+            <h3><b>Сафари:</b></h3>
+        </div>
+
+        {% for s in safari %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="tour-card">
+                        <a type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#{{ s.bs_id }}_Modal"><img src="{{ s.img }}" class="card-img" alt="{{ s.title }}"></a>
+                    
+                    <div class="card-body">
+                        <ul class="card-list">
+                            <li>
+                                <a type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#{{ s.bs_id }}_Modal"><h5 class="card-title">{{ s.title }}</h5></a>
+                            </li>
+                            <li>
+                                <a href='https://api.whatsapp.com/send?phone=+79911784253&text=Здравствуйте, хотелось бы забронировать экскурсию "{{ s.title }}"' target="_blank"><button type="button" class="btn btn-success">Заказать экскурсию</button></a>
+                            </li>
+                        </ul>
+                        
+                        <div class="modal fade" 
+                            id="{{ s.bs_id }}_Modal" 
+                            tabindex="-1" 
+                            aria-labelledby="{{ s.bs_id }}_ModalLabel" 
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="{{ s.bs_id }}_ModalLabel">
+                                            <b>{{ s.title }}</b>
+                                        </h5>
+                                        <button type="button" 
+                                                class="btn-close" 
+                                                data-bs-dismiss="modal" 
+                                                aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ s.description | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="offer">
+            <h3><b>Обзорные экскурсии:</b></h3>
+        </div>
+
+        {% for travel in traveling %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="tour-card">
+                        <a type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#{{ travel.bs_id }}_Modal"><img src="{{ travel.img }}" class="card-img" alt="{{ travel.title }}"></a>
+                    
+                    <div class="card-body">
+                        <ul class="card-list">
+                            <li>
+                                <a type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#{{ travel.bs_id }}_Modal"><h5 class="card-title">{{ travel.title }}</h5></a>
+                            </li>
+                            <li>
+                                <a href='https://api.whatsapp.com/send?phone=+79911784253&text=Здравствуйте, хотелось бы забронировать экскурсию "{{ travel.title }}"' target="_blank"><button type="button" class="btn btn-success">Заказать экскурсию</button></a>
+                            </li>
+                        </ul>
+                        
+                        <div class="modal fade" 
+                            id="{{ travel.bs_id }}_Modal" 
+                            tabindex="-1" 
+                            aria-labelledby="{{ travel.bs_id }}_ModalLabel" 
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="{{ travel.bs_id }}_ModalLabel">
+                                            <b>{{ travel.title }}</b>
+                                        </h5>
+                                        <button type="button" 
+                                                class="btn-close" 
+                                                data-bs-dismiss="modal" 
+                                                aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ travel.description | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="offer">
+            <h3><b>Водные прогулки:</b></h3>
+        </div>
+
+        {% for w in water_walks %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="tour-card">
+                        <a type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#{{ w.bs_id }}_Modal"><img src="{{ w.img }}" class="card-img" alt="{{ w.title }}"></a>
+                    
+                    <div class="card-body">
+                        <ul class="card-list">
+                            <li>
+                                <a type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#{{ w.bs_id }}_Modal"><h5 class="card-title">{{ w.title }}</h5></a>
+                            </li>
+                            <li>
+                                <a href='https://api.whatsapp.com/send?phone=+79911784253&text=Здравствуйте, хотелось бы забронировать экскурсию "{{ w.title }}"' target="_blank"><button type="button" class="btn btn-success">Заказать экскурсию</button></a>
+                            </li>
+                        </ul>
+                        
+                        <div class="modal fade" 
+                            id="{{ w.bs_id }}_Modal" 
+                            tabindex="-1" 
+                            aria-labelledby="{{ w.bs_id }}_ModalLabel" 
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="{{ w.bs_id }}_ModalLabel">
+                                            <b>{{ w.title }}</b>
+                                        </h5>
+                                        <button type="button" 
+                                                class="btn-close" 
+                                                data-bs-dismiss="modal" 
+                                                aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ w.description | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="offer">
+            <h3><b>Воздушные приключения:</b></h3>
+        </div>
+
+        {% for air in air_adventures %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="tour-card">
+                        <a type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#{{ air.bs_id }}_Modal"><img src="{{ air.img }}" class="card-img" alt="{{ air.title }}"></a>
+                    
+                    <div class="card-body">
+                        <ul class="card-list">
+                            <li>
+                                <a type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#{{ air.bs_id }}_Modal"><h5 class="card-title">{{ air.title }}</h5></a>
+                            </li>
+                            <li>
+                                <a href='https://api.whatsapp.com/send?phone=+79911784253&text=Здравствуйте, хотелось бы забронировать экскурсию "{{ air.title }}"' target="_blank"><button type="button" class="btn btn-success">Заказать экскурсию</button></a>
+                            </li>
+                        </ul>
+                        
+                        <div class="modal fade" 
+                            id="{{ air.bs_id }}_Modal" 
+                            tabindex="-1" 
+                            aria-labelledby="{{ air.bs_id }}_ModalLabel" 
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="{{ air.bs_id }}_ModalLabel">
+                                            <b>{{ air.title }}</b>
+                                        </h5>
+                                        <button type="button" 
+                                                class="btn-close" 
+                                                data-bs-dismiss="modal" 
+                                                aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ air.description | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="offer">
+            <h3><b>Достопримечательности:</b></h3>
+        </div>
+
+        {% for attr in attractions %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="tour-card">
+                        <a type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#{{ attr.bs_id }}_Modal"><img src="{{ attr.img }}" class="card-img" alt="{{ attr.title }}"></a>
+                    
+                    <div class="card-body">
+                        <ul class="card-list">
+                            <li>
+                                <a type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#{{ attr.bs_id }}_Modal"><h5 class="card-title">{{ attr.title }}</h5></a>
+                            </li>
+                            <li>
+                                <a href='https://api.whatsapp.com/send?phone=+79911784253&text=Здравствуйте, хотелось бы забронировать экскурсию "{{ attr.title }}"' target="_blank"><button type="button" class="btn btn-success">Заказать экскурсию</button></a>
+                            </li>
+                        </ul>
+                        
+                        <div class="modal fade" 
+                            id="{{ attr.bs_id }}_Modal" 
+                            tabindex="-1" 
+                            aria-labelledby="{{ attr.bs_id }}_ModalLabel" 
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="{{ attr.bs_id }}_ModalLabel">
+                                            <b>{{ attr.title }}</b>
+                                        </h5>
+                                        <button type="button" 
+                                                class="btn-close" 
+                                                data-bs-dismiss="modal" 
+                                                aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ attr.description | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="offer">
+            <h3><b>Развлечения и парки:</b></h3>
+        </div>
+
+        {% for p in parks %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="tour-card">
+                        <a type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#{{ p.bs_id }}_Modal"><img src="{{ p.img }}" class="card-img" alt="{{ p.title }}"></a>
+                    
+                    <div class="card-body">
+                        <ul class="card-list">
+                            <li>
+                                <a type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#{{ p.bs_id }}_Modal"><h5 class="card-title">{{ p.title }}</h5></a>
+                            </li>
+                            <li>
+                                <a href='https://api.whatsapp.com/send?phone=+79911784253&text=Здравствуйте, хотелось бы забронировать экскурсию "{{ p.title }}"' target="_blank"><button type="button" class="btn btn-success">Заказать экскурсию</button></a>
+                            </li>
+                        </ul>
+                        
+                        <div class="modal fade" 
+                            id="{{ p.bs_id }}_Modal" 
+                            tabindex="-1" 
+                            aria-labelledby="{{ p.bs_id }}_ModalLabel" 
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="{{ p.bs_id }}_ModalLabel">
+                                            <b>{{ p.title }}</b>
+                                        </h5>
+                                        <button type="button" 
+                                                class="btn-close" 
+                                                data-bs-dismiss="modal" 
+                                                aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {{ p.description | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

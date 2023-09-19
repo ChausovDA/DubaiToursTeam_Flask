@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+    <div class="container content">
+        <div class="container info">
+            <h4><b>Dubai Torus Team</b> – туроператор, базирующийся в Дубае, с обширным знанием местных особенностей и международным опытом предлагает вам:</h4>
+            <hr>
+        </div>
+
+        <div class="offer">
+            <h3><b>Лучшие экскурсии для вас:</b></h3>
+        </div>
+
+        <div class="tours">
+            <div class="row">
+
+                {% for t in tours %}
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                        <div class="tour-card">
+                                <a type="button"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#{{ t.bs_id }}_Modal"><img src="{{ t.img }}" class="card-img" alt="{{ t.title }}"></a>
+                            
+                            <div class="card-body">
+                                <ul class="card-list">
+                                    <li>
+                                        <a type="button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#{{ t.bs_id }}_Modal"><h5 class="card-title">{{ t.title }}</h5></a>
+                                    </li>
+                                    <li>
+                                        <a href='https://api.whatsapp.com/send?phone=+79911784253&text=Здравствуйте, хотелось бы забронировать экскурсию "{{ t.title }}"' target="_blank"><button type="button" class="btn btn-success">Заказать экскурсию</button></a>
+                                    </li>
+                                </ul>
+                                
+                                <div class="modal fade" 
+                                    id="{{ t.bs_id }}_Modal" 
+                                    tabindex="-1" 
+                                    aria-labelledby="{{ t.bs_id }}_ModalLabel" 
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="{{ t.bs_id }}_ModalLabel">
+                                                    <b>{{ t.title }}</b>
+                                                </h5>
+                                                <button type="button" 
+                                                        class="btn-close" 
+                                                        data-bs-dismiss="modal" 
+                                                        aria-label="Close">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                {{ t.description | safe }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                
+            </div>
+
+        </div>
+
+        <div class="showall">
+            <a href="{{ url_for('tours') }}"><button class="btn btn-lg">Показать все экскурсии</button></a>
+        </div>
+
+        <div class="container about" id="about">
+            <h3><b>DubaiToursTeam - 10 лет на туристическом рынке ОАЭ</b></h3>
+            <p>DubaiToursTeam - туроператор, базирующийся в Дубае, с обширным знанием местных особенностей и международным опытом. Мы поможем вам познакомиться с культурой и традициями ОАЭ, открыть для себя красоту уникальных мест и подарить незабываемый отдых в Дубае. Присоединяйтесь к нам, чтобы не пропустить самое интересное!</p>
+
+            <div class="offer">
+                <h3><b>DubaiToursTeam это:</b></h3>
+            </div>
+
+            <div class="row">
+
+                {% for a in about %}
+
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+                        <div class="about-card">
+                            <img src="{{ a.img }}" class="about-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ a.title }}</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="offer">
+                <h3><b>Гостям мы предлагаем:</b></h3>
+            </div>
+
+            <div class="row">
+
+                {% for g in for_guests %}
+
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+                        <div class="about-card">
+                            <img src="{{ g.img }}" class="about-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ g.title }}</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <div class="container contacts" id="contacts">
+
+            <div class="offer">
+                <h3><b>Свяжитесь с нами:</b></h3>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="contact-map">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7287d25e893456c9f704e34a9509af15a9fd15dc90e8048420aa06f693b5b3c7&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+                {% for c in contacts %}
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+                        <div class="contact-list">
+                            <a href="{{ c.url }}" target="_blank"><img src="{{ c.img }}"></a><p><b>{{ c.title }}</b></p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}
