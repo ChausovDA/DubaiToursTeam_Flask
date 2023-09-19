@@ -30,7 +30,7 @@ class FDataBase:
             if res:
                 return res
         else:
-            self.__cur.execute("SELECT id, title , description, img, bs_id, FROM tours")
+            self.__cur.execute("SELECT id, title , description, img, bs_id FROM tours")
             res = self.__cur.fetchall()
             if res:
                 return res

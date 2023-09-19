@@ -9,7 +9,7 @@ class UserLogin(UserMixin):
 
     def from_db(self, user_id, d_base):
         """Выполняет загрузку пользовательских данных из БД"""
-        self.__user = d_base.getUser(user_id)
+        self.__user = d_base.get_user(user_id)
         return self
 
     def create(self, user):
